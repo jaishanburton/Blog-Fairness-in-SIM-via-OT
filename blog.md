@@ -125,3 +125,6 @@ S3D improves information dissemination by ensuring a more equitable distribution
 
 ### [6. Conclusion](#conclusion)
 
+### References
+
+1. Chowdhary, S., et al. (2024). Fairness in Social Influence Maximization via Optimal Transport. *NeurIPS 2024*. Available here [https://neurips.cc/virtual/2024/poster/94521](https://neurips.cc/virtual/2024/poster/94521).

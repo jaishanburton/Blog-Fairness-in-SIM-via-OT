@@ -125,6 +125,9 @@ S3D improves information dissemination by ensuring a more equitable distribution
 
 ### [6. Conclusion](#conclusion)
 
+As a conclusion, we can say that fairness in Social Influence Maximization is crucial to prevent systemic exclusion in information dissemination. Traditional methods often favor well-connected individuals, reinforcing existing inequalities. By introducing Mutual Fairness and the S3D algorithm, we provide a framework that balances fairness and efficiency, ensuring a more equitable outreach. Through our job-matching case study for example, we demonstrated that S3D significantly reduces bias while maintaining high influence spread. These results confirm that fairness-aware approaches can be both practical and impactful, making them essential for real-world applications in hiring, education, and public awareness campaigns.
+
+
 ### References
 
 1. Chowdhary, S., et al. (2024). Fairness in Social Influence Maximization via Optimal Transport. *NeurIPS 2024*. Available here [https://neurips.cc/virtual/2024/poster/94521](https://neurips.cc/virtual/2024/poster/94521).

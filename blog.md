@@ -184,7 +184,7 @@ In [Figure 8](#fig8)(c), the outcomes are highly random: depending on the iterat
 
 The results of the metric as a function of β are illustrated in Figure 9. Yellow indicates a low transport cost, while blue signals a deviation from the ideal.
 
-When β = 0 [Figure 9](#fig9)(a), only efficiency is considered: the information reaches the maximum number of people, but without regard for fairness. In contrast, with β = 1 ([Figure 9](#fig9)(d)), only fairness is optimized, resulting in a perfectly equitable distribution but with reduced efficiency.
+When β = 0 [Figure 9](#fig9)(a), only efficiency is considered: the information reaches the maximum number of people, but without regard for fairness (low transport cost in (1,1)). In contrast, with β = 1 ([Figure 9](#fig9)(d)), only fairness is optimized, resulting in a perfectly equitable distribution but with reduced efficiency because the point (1,1) is no longer the only ideal one.
 
 An optimal balance is achieved for β = 0.66 ([Figure 9](#fig9)(c)), where the transport cost is minimized at the top-right of the plane. The further one moves away from this point, the higher the cost (blue areas), indicating a reduced level of optimization.
 

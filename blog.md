@@ -94,7 +94,7 @@ To illustrate this on a figure:
    - The diagonal signifies that both groups receive exactly the same amount of information, which corresponds to the ideal sought.
 
 A movement perpendicular to the diagonal should be penalized, as it indicates an imbalance in the distribution of information between the groups. Similarly, we must penalize movement along the diagonal, as it affects efficiency. These costs are measured by Euclidean distance.
-In the figure below, we observe the transition from a distribution γa to a distribution γb, broken down into two components. One is dashed, representing the efficiency, and the other is solid, representing the fairness.
+In the [Figure 3](#fig3) below, we observe the transition from a distribution γa to a distribution γb, broken down into two components. One is dashed, representing the efficiency, and the other is solid, representing the fairness.
 
 <center>
 <a name="fig3"></a>
@@ -161,9 +161,9 @@ By taking β = 0.6, which slightly favors fairness, we obtain the following resu
 
 We apply this metric to different datasets, which include social networks and communities partitioned into two groups. To do this, we load the dataset as a graph (V, E) and select a seedset S of size varying between 2 and 90. To diffuse the information, we use a probability p in the interval [0,1]. Since the process is stochastic, we repeat the operation 1000 times.
 
-The results in Figure 7 illustrate how information propagation varies depending on the probability p. In figure (a), with p = 0.5, the information is disseminated in a way that is both efficient and equitable, with the groups being highly connected. The behavior is deterministic, with similar results in each iteration. In figure (b), when p is reduced to 0.1, the propagation remains equitable but becomes less efficient, reaching on average only 20% of each group instead of nearly 100% as in (a).
+The results in [Figure 8](#fig8) illustrate how information propagation varies depending on the probability p. In [Figure 8](#fig8)(a), with p = 0.5, the information is disseminated in a way that is both efficient and equitable, with the groups being highly connected. The behavior is deterministic, with similar results in each iteration. In [Figure 8](#fig8)(b), when p is reduced to 0.1, the propagation remains equitable but becomes less efficient, reaching on average only 20% of each group instead of nearly 100% as in (a).
 
-In figure (c), the outcomes are highly random: depending on the iteration, either one group receives all the information or the other, highlighting an inequity that is overlooked by traditional metrics. Finally, figure (d) reveals a slight bias, where the variance of the distribution extends but does not remain centered on the diagonal. Although some metrics might consider this situation fair, mutual fairness provides more insight by evaluating fairness in each realization rather than just averaging it.
+In [Figure 8](#fig8)(c), the outcomes are highly random: depending on the iteration, either one group receives all the information or the other, highlighting an inequity that is overlooked by traditional metrics. Finally, [Figure 8](#fig8)(d) reveals a slight bias, where the variance of the distribution extends but does not remain centered on the diagonal. Although some metrics might consider this situation fair, mutual fairness provides more insight by evaluating fairness in each realization rather than just averaging it.
 
 <center>
 <a name="fig8"></a>
@@ -175,9 +175,9 @@ In figure (c), the outcomes are highly random: depending on the iteration, eithe
 
 The results of the metric as a function of β are illustrated in Figure 9. Yellow indicates a low transport cost, while blue signals a deviation from the ideal.
 
-When β = 0 (figure 9a), only efficiency is considered: the information reaches the maximum number of people, but without regard for fairness. In contrast, with β = 1 (figure 9d), only fairness is optimized, resulting in a perfectly equitable distribution but with reduced efficiency.
+When β = 0 [Figure 9](#fig9)(a), only efficiency is considered: the information reaches the maximum number of people, but without regard for fairness. In contrast, with β = 1 ([Figure 9](#fig9)(d)), only fairness is optimized, resulting in a perfectly equitable distribution but with reduced efficiency.
 
-An optimal balance is achieved for β = 0.66 (figure 9c), where the transport cost is minimized at the top-right of the plane. The further one moves away from this point, the higher the cost (blue areas), indicating a reduced level of optimization.
+An optimal balance is achieved for β = 0.66 ([Figure 9](#fig9)(c)), where the transport cost is minimized at the top-right of the plane. The further one moves away from this point, the higher the cost (blue areas), indicating a reduced level of optimization.
 
 In summary, as β increases, fairness is prioritized, and getting closer to the diagonal reduces the transport cost, ensuring an equitable and efficient diffusion of information. Thus, the formula dynamically adjusts the trade-off between fairness and efficiency, with β acting as the weighting parameter that influences the distribution of the cost.
 

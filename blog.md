@@ -97,6 +97,7 @@ A movement perpendicular to the diagonal should be penalized, as it indicates an
 In the figure below, we observe the transition from a distribution γa to a distribution γb, broken down into two components. One is dashed, representing the efficiency, and the other is solid, representing the fairness.
 
 <center>
+<a name="fig3"></a>
 
 ![figure3](/images/figure3.png)
 </center>
@@ -104,6 +105,7 @@ In the figure below, we observe the transition from a distribution γa to a dist
 To define this cost, we use the following formula:
 
 <center>
+<a name="fig4"></a>
 
 ![figure4](/images/figure4.png)
 </center>
@@ -129,6 +131,7 @@ The goal is to find the plan π that minimizes the total moving cost while ensur
 To arrive at the final formula, we start with the W<sub>cβ</sub> distance, which measures the transport cost between the current distribution γ and the ideal distribution γ*. Using the Euclidean norm to measure the distance between the points (x1, x2) and (y1, y2), we factor and generalize the terms to obtain the following equality:
 
 <center>
+<a name="fig6"></a>
 
 ![figure6](/images/figure6.png)
 </center>
@@ -147,6 +150,7 @@ By taking β = 0.6, which slightly favors fairness, we obtain the following resu
    - fairness(γ<sub>ex</sub>) ≈ fairness(γ), because although γ<sub>ex</sub> is twice as efficient (|0.8 + 0.2 - 2| = 1 versus |0 + 0 - 2| = 2), its score is heavily penalized by the lack of fairness. Indeed, one group is significantly favored over the other, making it as unbalanced as γ.
 
 <center>
+<a name="fig7"></a>
 
 ![figure7](/images/figure7.png)
 </center>
@@ -162,6 +166,7 @@ The results in Figure 7 illustrate how information propagation varies depending 
 In figure (c), the outcomes are highly random: depending on the iteration, either one group receives all the information or the other, highlighting an inequity that is overlooked by traditional metrics. Finally, figure (d) reveals a slight bias, where the variance of the distribution extends but does not remain centered on the diagonal. Although some metrics might consider this situation fair, mutual fairness provides more insight by evaluating fairness in each realization rather than just averaging it.
 
 <center>
+<a name="fig8"></a>
 
 ![figure8](/images/figure8.png)
 </center>
@@ -177,6 +182,7 @@ An optimal balance is achieved for β = 0.66 (figure 9c), where the transport co
 In summary, as β increases, fairness is prioritized, and getting closer to the diagonal reduces the transport cost, ensuring an equitable and efficient diffusion of information. Thus, the formula dynamically adjusts the trade-off between fairness and efficiency, with β acting as the weighting parameter that influences the distribution of the cost.
 
 <center>
+<a name="fig9"></a>
 
 ![figure9](/images/figure9.png)
 </center>
@@ -234,8 +240,9 @@ Imagine a job-matching platform that aims to spread job opportunities equally ac
 - S3D Solution: By dynamically adjusting seed selection, S3D ensures that both communities receive job postings more equitably.
 
 <center>
+<a name="fig10"></a>
 
-![figure2](/images/figure10.png)
+![figure10](/images/figure10.png)
 </center>
 
 - S3D (red points) significantly improves fairness compared to label-blind methods (blue).
@@ -245,8 +252,9 @@ Without S3D, certain communities miss job postings entirely in some scenarios.
 #### How Does S3D Balance Fairness and Efficiency?  
 
 <center>
+<a name="fig11"></a>
 
-![figure2](/images/figure11.png)
+![figure11](/images/figure11.png)
 </center>
 
 - S3D achieves the highest fairness scores (y-axis).  

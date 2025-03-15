@@ -194,9 +194,9 @@ The algorithm follows these key steps:
 4. **Acceptance Criteria (Metropolis-Hastings Selection Rule)**:  
    The new seed set \(S'\) is accepted with a probability defined as:
 
-$$
-p_{\text{accept}} \leftarrow \min \left\{ 1, e^{E_S - E_{S'}} \right\}
-$$
+   $$
+   p_{\text{accept}} \leftarrow \min \left\{ 1, e^{E_S - E_{S'}} \right\}
+   $$
 
    ensuring fairness-improving modifications are favored while maintaining some randomness.
 

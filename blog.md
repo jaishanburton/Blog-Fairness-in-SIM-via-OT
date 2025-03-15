@@ -58,11 +58,9 @@ Consider two groups, C1 and C2, each with an outreach probability distribution:
 
 On average, both groups have a 50% chance of receiving the information, which might suggest a fair situation. However, this average hides significant differences in the actual distribution of information, as illustrated in the example below:
 
-<center>
-<a name="fig2"></a>
-
-![figure2](/images/figure2.png)
-</center>
+<p align="center">
+  <img src="/images/figure2.png" alt="figure2">
+</p>
 
 First case (γa) :
 
@@ -95,19 +93,15 @@ To illustrate this on a figure:
 A movement perpendicular to the diagonal should be penalized, as it indicates an imbalance in the distribution of information between the groups. Similarly, we must penalize movement along the diagonal, as it affects efficiency. These costs are measured by Euclidean distance.
 In the [Figure 3](#fig3) below, we observe the transition from a distribution γa to a distribution γb, broken down into two components. One is dashed, representing the efficiency, and the other is solid, representing the fairness.
 
-<center>
-<a name="fig3"></a>
-
-![figure3](/images/figure3.png)
-</center>
+<p align="center">
+  <img src="/images/figure3.png" alt="figure3">
+</p>
 
 To define this cost, we use the following formula:
 
-<center>
-<a name="fig4"></a>
-
-![figure4](/images/figure4.png)
-</center>
+<p align="center">
+  <img src="/images/figure4.png" alt="figure4">
+</p>
 
 
 We can draw an analogy with a move, where the goal is to transport items from House A to House B at the lowest possible cost, while ensuring that each item reaches its final destination according to W<sub>cβ</sub>(γ<sub>a</sub>, γ<sub>b</sub>).
@@ -116,11 +110,9 @@ We can draw an analogy with a move, where the goal is to transport items from Ho
    - γ<sub>b</sub>: represents the list of items expected in House B, indicating where they should arrive and in what quantity.
    - c: This is the function that specifies the cost of moving an item from one location to another. In [figure 5](#fig5), we evaluate the transport cost between the point (x1, x2) and (y1, y2). We take z(x1, x2, y1, y2) as an intermediate point in the movement of an item to simplify the calculations. The transport cost is then defined as follows:
 
-<center>
-<a name="fig5"></a>
-
-![figure5](/images/figure5.png)
-</center>
+<p align="center">
+  <img src="/images/figure5.png" alt="figure5">
+</p>
 
    - β: A coefficient used to weight the importance of fairness relative to efficiency.
    - π: This is the "moving plan." It indicates how many items are moved from each location in House A to each location in House B.
@@ -129,11 +121,9 @@ The goal is to find the plan π that minimizes the total moving cost while ensur
 
 To arrive at the final formula, we start with the W<sub>cβ</sub> distance, which measures the transport cost between the current distribution γ and the ideal distribution γ*. Using the Euclidean norm to measure the distance between the points (x1, x2) and (y1, y2), we factor and generalize the terms to obtain the following equality:
 
-<center>
-<a name="fig6"></a>
-
-![figure6](/images/figure6.png)
-</center>
+<p align="center">
+  <img src="/images/figure6.png" alt="figure6">
+</p>
 
 This formula combines both fairness (measured by |x1 - x2|) and efficiency (measured by |x1 + x2 - 2|), weighted by the parameter β. The term max{1, 2 - 2β} ensures that the metric remains normalized between 0 and 1.
 
@@ -148,11 +138,9 @@ By taking β = 0.6, which slightly favors fairness, we obtain the following resu
    - fairness(γ*) > fairness(γ), confirming that the information is better distributed when everyone receives it.
    - fairness(γ<sub>ex</sub>) ≈ fairness(γ), because although γ<sub>ex</sub> is twice as efficient (|0.8 + 0.2 - 2| = 1 versus |0 + 0 - 2| = 2), its score is heavily penalized by the lack of fairness. Indeed, one group is significantly favored over the other, making it as unbalanced as γ.
 
-<center>
-<a name="fig7"></a>
-
-![figure7](/images/figure7.png)
-</center>
+<p align="center">
+  <img src="/images/figure7.png" alt="figure7">
+</p>
 
 ### [3. Metric in practice](#fairness-evaluation)
 
@@ -164,11 +152,9 @@ The results in [Figure 8](#fig8) illustrate how information propagation varies d
 
 In [Figure 8](#fig8)(c), the outcomes are highly random: depending on the iteration, either one group receives all the information or the other, highlighting an inequity that is overlooked by traditional metrics. Finally, [Figure 8](#fig8)(d) reveals a slight bias, where the variance of the distribution extends but does not remain centered on the diagonal. Although some metrics might consider this situation fair, mutual fairness provides more insight by evaluating fairness in each realization rather than just averaging it.
 
-<center>
-<a name="fig8"></a>
-
-![figure8](/images/figure8.png)
-</center>
+<p align="center">
+  <img src="/images/figure8.png" alt="figure8">
+</p>
 
 #### **Impact of  β**
 
@@ -180,11 +166,9 @@ An optimal balance is achieved for β = 0.66 ([Figure 9](#fig9)(c)), where the t
 
 In summary, as β increases, fairness is prioritized, and getting closer to the diagonal reduces the transport cost, ensuring an equitable and efficient diffusion of information. Thus, the formula dynamically adjusts the trade-off between fairness and efficiency, with β acting as the weighting parameter that influences the distribution of the cost.
 
-<center>
-<a name="fig9"></a>
-
-![figure9](/images/figure9.png)
-</center>
+<p align="center">
+  <img src="/images/figure9.png" alt="figure9">
+</p>
 
 Now that we have our metric to determine if a distribution is fair and efficient, we want to focus on an algorithm to select the right seeds.
 
@@ -239,11 +223,9 @@ Imagine a job-matching platform that aims to spread job opportunities equally ac
 - Traditional IM methods pick influencers mostly from highly connected elite universities, leaving out vocational school graduates.
 - S3D Solution: By dynamically adjusting seed selection, S3D ensures that both communities receive job postings more equitably.
 
-<center>
-<a name="fig10"></a>
-
-![figure10](/images/figure10.png)
-</center>
+<p align="center">
+  <img src="/images/figure10.png" alt="figure10">
+</p>
 
 - S3D (red points) significantly improves fairness compared to label-blind methods (blue).
 - The outreach distribution shifts towards the diagonal, meaning both groups receive information more equally.
@@ -251,11 +233,9 @@ Without S3D, certain communities miss job postings entirely in some scenarios.
 
 #### How Does S3D Balance Fairness and Efficiency?  
 
-<center>
-<a name="fig11"></a>
-
-![figure11](/images/figure11.png)
-</center>
+<p align="center">
+  <img src="/images/figure11.png" alt="figure11">
+</p>
 
 - S3D achieves the highest fairness scores (y-axis).  
 - Minimal efficiency loss (x-axis) → Proves that fairness gains do not come at a high cost.

@@ -226,7 +226,7 @@ Imagine a job-matching platform that aims to spread job opportunities equally ac
 <p align="center">
   <img src="/images/figure10.png" alt="figure10">
   <br>
-  <span style="text-decoration: underline; font-style: italic;">*Figure 10 : S3D Improvement Across Datasets and Parameters*</span>
+  <span style="text-decoration: underline; font-style: italic;">Figure 10 : S3D Improvement Across Datasets and Parameters</span>
 </p>
 
 - S3D (red points) significantly improves fairness compared to label-blind methods (blue).

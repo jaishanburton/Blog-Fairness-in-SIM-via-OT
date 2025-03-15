@@ -49,6 +49,7 @@ To understand why a new metric is necessary, let’s examine two situations wher
 Consider two groups, C1 and C2, each with an outreach probability distribution:
 
 <p align="center">
+  <a name="fig1"></a>
   <img src="/images/figure1.png" alt="figure1">
   <br>
   <i>Figure 1 : Outreach Probability Distribution for Groups C1 and C2</i>
@@ -61,6 +62,7 @@ Consider two groups, C1 and C2, each with an outreach probability distribution:
 On average, both groups have a 50% chance of receiving the information, which might suggest a fair situation. However, this average hides significant differences in the actual distribution of information, as illustrated in the example below:
 
 <p align="center">
+  <a name="fig2"></a>
   <img src="/images/figure2.png" alt="figure2">
   <br>
   <i>Figure 2 : Comparison of Two Joint Probability Distributions: γa and γb</i>
@@ -98,6 +100,7 @@ A movement perpendicular to the diagonal should be penalized, as it indicates an
 In the [Figure 3](#fig3) below, we observe the transition from a distribution γa to a distribution γb, broken down into two components. One is dashed, representing the efficiency, and the other is solid, representing the fairness.
 
 <p align="center">
+  <a name="fig3"></a>
   <img src="/images/figure3.png" alt="figure3">
   <br>
   <i>Figure 3 : Representation of the transport cost between two points (x1,x2) and(y1,y2) with an intermediate point z(x1,x2,y1,y2)</i>
@@ -106,6 +109,7 @@ In the [Figure 3](#fig3) below, we observe the transition from a distribution γ
 To define this cost, we use the following formula:
 
 <p align="center">
+  <a name="fig4"></a>
   <img src="/images/figure4.png" alt="figure4">
   <br>
   <i>Figure 4 : Optimal Transport Cost Wcβ(γa,γb) Between Distributions γa and γb</i>
@@ -119,6 +123,7 @@ We can draw an analogy with a move, where the goal is to transport items from Ho
    - c: This is the function that specifies the cost of moving an item from one location to another. In [figure 5](#fig5), we evaluate the transport cost between the point (x1, x2) and (y1, y2). We take z(x1, x2, y1, y2) as an intermediate point in the movement of an item to simplify the calculations. The transport cost is then defined as follows:
 
 <p align="center">
+  <a name="fig5"></a>
   <img src="/images/figure5.png" alt="figure5">
   <br>
   <i>Figure 5 : Cost Function cβ((x1,x2),(y1,y2)) Combining Fairness and Efficiency</i>
@@ -132,6 +137,7 @@ The goal is to find the plan π that minimizes the total moving cost while ensur
 To arrive at the final formula, we start with the W<sub>cβ</sub> distance, which measures the transport cost between the current distribution γ and the ideal distribution γ*. Using the Euclidean norm to measure the distance between the points (x1, x2) and (y1, y2), we factor and generalize the terms to obtain the following equality:
 
 <p align="center">
+  <a name="fig6"></a>
   <img src="/images/figure6.png" alt="figure6">
   <br>
   <i>Figure 6 : β-Fairness Metric: Combining Fairness and Efficiency in Distribution γ</i>
@@ -151,6 +157,7 @@ By taking β = 0.6, which slightly favors fairness, we obtain the following resu
    - fairness(γ<sub>ex</sub>) ≈ fairness(γ), because although γ<sub>ex</sub> is twice as efficient (|0.8 + 0.2 - 2| = 1 versus |0 + 0 - 2| = 2), its score is heavily penalized by the lack of fairness. Indeed, one group is significantly favored over the other, making it as unbalanced as γ.
 
 <p align="center">
+  <a name="fig7"></a>
   <img src="/images/figure7.png" alt="figure7">
   <br>
   <i>Figure 7 : Fairness Scores for Different Distributions: γ, γex, and γ∗</i>
@@ -167,6 +174,7 @@ The results in [Figure 8](#fig8) illustrate how information propagation varies d
 In [Figure 8](#fig8)(c), the outcomes are highly random: depending on the iteration, either one group receives all the information or the other, highlighting an inequity that is overlooked by traditional metrics. Finally, [Figure 8](#fig8)(d) reveals a slight bias, where the variance of the distribution extends but does not remain centered on the diagonal. Although some metrics might consider this situation fair, mutual fairness provides more insight by evaluating fairness in each realization rather than just averaging it.
 
 <p align="center">
+  <a name="fig8"></a>
   <img src="/images/figure8.png" alt="figure8">
   <br>
   <i>Figure 8 : Outreach Probability Distributions for Different Propagation Scenarios</i>
@@ -183,6 +191,7 @@ An optimal balance is achieved for β = 0.66 ([Figure 9](#fig9)(c)), where the t
 In summary, as β increases, fairness is prioritized, and getting closer to the diagonal reduces the transport cost, ensuring an equitable and efficient diffusion of information. Thus, the formula dynamically adjusts the trade-off between fairness and efficiency, with β acting as the weighting parameter that influences the distribution of the cost.
 
 <p align="center">
+  <a name="fig9"></a>
   <img src="/images/figure9.png" alt="figure9">
   <br>
   <i>Figure 9 : Impact of β on Outreach Probability Distributions: Balancing Fairness and Efficiency</i>
@@ -215,7 +224,7 @@ The algorithm follows these key steps:
    $$
    p_{\text{accept}} \leftarrow \min { 1, e^{ES - E{S'}} }
    $$
-   
+
    ensuring fairness-improving modifications are favored while maintaining some randomness.
 
 5. **Convergence**:  
@@ -242,6 +251,7 @@ Imagine a job-matching platform that aims to spread job opportunities equally ac
 - S3D Solution: By dynamically adjusting seed selection, S3D ensures that both communities receive job postings more equitably.
 
 <p align="center">
+  <a name="fig10"></a>
   <img src="/images/figure10.png" alt="figure10">
   <br>
   <i>Figure 10 : S3D Improvement Across Datasets and Parameters</i>

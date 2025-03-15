@@ -52,6 +52,8 @@ Consider two groups, C1 and C2, each with an outreach probability distribution:
 <a name="fig1"></a>
 
 ![figure1](/images/figure1.png)
+
+*Outreach Probability Distribution for Groups C1 and C2*
 </center>
 
    - δ<sub>0</sub> represents the case where the information is not transmitted.
@@ -63,6 +65,8 @@ On average, both groups have a 50% chance of receiving the information, which mi
 <a name="fig2"></a>
 
 ![figure2](/images/figure2.png)
+
+*Comparison of Two Joint Probability Distributions: γa and γb*
 </center>
 
 First case (γa) :
@@ -100,6 +104,8 @@ In the [Figure 3](#fig3) below, we observe the transition from a distribution γ
 <a name="fig3"></a>
 
 ![figure3](/images/figure3.png)
+
+*Representation of the transport cost between two points (x1,x2) and(y1,y2) with an intermediate point z(x1,x2,y1,y2)*
 </center>
 
 To define this cost, we use the following formula:
@@ -108,6 +114,8 @@ To define this cost, we use the following formula:
 <a name="fig4"></a>
 
 ![figure4](/images/figure4.png)
+
+*Optimal Transport Cost Wcβ(γa,γb) Between Distributions γa and γb*
 </center>
 
 
@@ -121,6 +129,8 @@ We can draw an analogy with a move, where the goal is to transport items from Ho
 <a name="fig5"></a>
 
 ![figure5](/images/figure5.png)
+
+*Cost Function cβ((x1,x2),(y1,y2)) Combining Fairness and Efficiency*
 </center>
 
    - β: A coefficient used to weight the importance of fairness relative to efficiency.
@@ -134,6 +144,8 @@ To arrive at the final formula, we start with the W<sub>cβ</sub> distance, whic
 <a name="fig6"></a>
 
 ![figure6](/images/figure6.png)
+
+*β-Fairness Metric: Combining Fairness and Efficiency in Distribution γ*
 </center>
 
 This formula combines both fairness (measured by |x1 - x2|) and efficiency (measured by |x1 + x2 - 2|), weighted by the parameter β. The term max{1, 2 - 2β} ensures that the metric remains normalized between 0 and 1.
@@ -153,9 +165,11 @@ By taking β = 0.6, which slightly favors fairness, we obtain the following resu
 <a name="fig7"></a>
 
 ![figure7](/images/figure7.png)
+
+*Fairness Scores for Different Distributions: γ, γex, and γ∗*
 </center>
 
-### [3. Metric in practice](#fairness-evaluation)
+### [3.Metric in practice](#fairness-evaluation)
 
 #### **Mutual fairness in practice**
 
@@ -169,6 +183,8 @@ In [Figure 8](#fig8)(c), the outcomes are highly random: depending on the iterat
 <a name="fig8"></a>
 
 ![figure8](/images/figure8.png)
+
+*Outreach Probability Distributions for Different Propagation Scenarios*
 </center>
 
 #### **Impact of  β**
@@ -185,6 +201,8 @@ In summary, as β increases, fairness is prioritized, and getting closer to the 
 <a name="fig9"></a>
 
 ![figure9](/images/figure9.png)
+
+*Impact of β on Outreach Probability Distributions: Balancing Fairness and Efficiency*
 </center>
 
 Now that we have our metric to determine if a distribution is fair and efficient, we want to focus on an algorithm to select the right seeds.
@@ -210,7 +228,6 @@ The algorithm follows these key steps:
 
 4. **Acceptance Criteria (Metropolis-Hastings Selection Rule)**:  
    The new seed set \(S'\) is accepted with a probability defined as:
-
 $$
 p_{\text{accept}} \leftarrow \min \left\{ 1, e^{E_S - E_{S'}} \right\}
 $$
@@ -220,7 +237,7 @@ $$
 5. **Convergence**:  
    The process runs until the fairness score stabilizes, achieving an optimal trade-off between fairness and outreach.
 
-#### Experiment
+#### Experimental Validation of S3D
 
 To evaluate the effectiveness of S3D, we compare it against traditional influence maximization algorithms on real-world social networks.  
 
@@ -244,6 +261,8 @@ Imagine a job-matching platform that aims to spread job opportunities equally ac
 <a name="fig10"></a>
 
 ![figure10](/images/figure10.png)
+
+*S3D Improvement Across Datasets and Parameters*
 </center>
 
 - S3D (red points) significantly improves fairness compared to label-blind methods (blue).

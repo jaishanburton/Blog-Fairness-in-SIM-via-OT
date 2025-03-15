@@ -155,7 +155,7 @@ By taking β = 0.6, which slightly favors fairness, we obtain the following resu
 ![figure7](/images/figure7.png)
 </center>
 
-### [3.Metric in practice](#fairness-evaluation)
+### [3. Metric in practice](#fairness-evaluation)
 
 #### **Mutual fairness in practice**
 
@@ -210,6 +210,7 @@ The algorithm follows these key steps:
 
 4. **Acceptance Criteria (Metropolis-Hastings Selection Rule)**:  
    The new seed set \(S'\) is accepted with a probability defined as:
+
 $$
 p_{\text{accept}} \leftarrow \min \left\{ 1, e^{E_S - E_{S'}} \right\}
 $$
@@ -219,7 +220,7 @@ $$
 5. **Convergence**:  
    The process runs until the fairness score stabilizes, achieving an optimal trade-off between fairness and outreach.
 
-#### Experimental Validation of S3D
+#### Experiment
 
 To evaluate the effectiveness of S3D, we compare it against traditional influence maximization algorithms on real-world social networks.  
 

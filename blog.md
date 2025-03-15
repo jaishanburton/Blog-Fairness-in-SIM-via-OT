@@ -51,7 +51,7 @@ Consider two groups, C1 and C2, each with an outreach probability distribution:
 <p align="center">
   <img src="/images/figure1.png" alt="figure1">
   <br>
-  <i>Outreach Probability Distribution for Groups C1 and C2</i>
+  <i>Figure 1 : Outreach Probability Distribution for Groups C1 and C2</i>
 </p>
 
 
@@ -63,7 +63,7 @@ On average, both groups have a 50% chance of receiving the information, which mi
 <p align="center">
   <img src="/images/figure2.png" alt="figure2">
   <br>
-  <i>Comparison of Two Joint Probability Distributions: γa and γb</i>
+  <i>Figure 2 : Comparison of Two Joint Probability Distributions: γa and γb</i>
 </p>
 
 First case (γa) :
@@ -100,7 +100,7 @@ In the [Figure 3](#fig3) below, we observe the transition from a distribution γ
 <p align="center">
   <img src="/images/figure3.png" alt="figure3">
   <br>
-  <i>Representation of the transport cost between two points (x1,x2) and(y1,y2) with an intermediate point z(x1,x2,y1,y2)</i>
+  <i>Figure 3 : Representation of the transport cost between two points (x1,x2) and(y1,y2) with an intermediate point z(x1,x2,y1,y2)</i>
 </p>
 
 To define this cost, we use the following formula:
@@ -108,7 +108,7 @@ To define this cost, we use the following formula:
 <p align="center">
   <img src="/images/figure4.png" alt="figure4">
   <br>
-  <i>Optimal Transport Cost Wcβ(γa,γb) Between Distributions γa and γb</i>
+  <i>Figure 4 : Optimal Transport Cost Wcβ(γa,γb) Between Distributions γa and γb</i>
 </p>
 
 
@@ -121,7 +121,7 @@ We can draw an analogy with a move, where the goal is to transport items from Ho
 <p align="center">
   <img src="/images/figure5.png" alt="figure5">
   <br>
-  <i>Cost Function cβ((x1,x2),(y1,y2)) Combining Fairness and Efficiency</i>
+  <i>Figure 5 : Cost Function cβ((x1,x2),(y1,y2)) Combining Fairness and Efficiency</i>
 </p>
 
    - β: A coefficient used to weight the importance of fairness relative to efficiency.
@@ -134,7 +134,7 @@ To arrive at the final formula, we start with the W<sub>cβ</sub> distance, whic
 <p align="center">
   <img src="/images/figure6.png" alt="figure6">
   <br>
-  <i>β-Fairness Metric: Combining Fairness and Efficiency in Distribution γ</i>
+  <i>Figure 6 : β-Fairness Metric: Combining Fairness and Efficiency in Distribution γ</i>
 </p>
 
 This formula combines both fairness (measured by |x1 - x2|) and efficiency (measured by |x1 + x2 - 2|), weighted by the parameter β. The term max{1, 2 - 2β} ensures that the metric remains normalized between 0 and 1.
@@ -153,7 +153,7 @@ By taking β = 0.6, which slightly favors fairness, we obtain the following resu
 <p align="center">
   <img src="/images/figure7.png" alt="figure7">
   <br>
-  <i>Fairness Scores for Different Distributions: γ, γex, and γ∗</i>
+  <i>Figure 7 : Fairness Scores for Different Distributions: γ, γex, and γ∗</i>
 </p>
 
 ### [3. Metric in practice](#fairness-evaluation)
@@ -169,7 +169,7 @@ In [Figure 8](#fig8)(c), the outcomes are highly random: depending on the iterat
 <p align="center">
   <img src="/images/figure8.png" alt="figure8">
   <br>
-  <i>Outreach Probability Distributions for Different Propagation Scenarios</i>
+  <i>Figure 8 : Outreach Probability Distributions for Different Propagation Scenarios</i>
 </p>
 
 #### **Impact of  β**
@@ -185,7 +185,7 @@ In summary, as β increases, fairness is prioritized, and getting closer to the 
 <p align="center">
   <img src="/images/figure9.png" alt="figure9">
   <br>
-  <i>Impact of β on Outreach Probability Distributions: Balancing Fairness and Efficiency</i>
+  <i>Figure 9 : Impact of β on Outreach Probability Distributions: Balancing Fairness and Efficiency</i>
 </p>
 
 Now that we have our metric to determine if a distribution is fair and efficient, we want to focus on an algorithm to select the right seeds.
@@ -212,8 +212,10 @@ The algorithm follows these key steps:
 4. **Acceptance Criteria (Metropolis-Hastings Selection Rule)**:  
    The new seed set \(S'\) is accepted with a probability defined as:
 
-   $$p_{\text{accept}} \leftarrow \min \left\{ 1, e^{E_S - E_{S'}} \right\}$$
-
+   $$
+   p_{\text{accept}} \leftarrow \min { 1, e^{ES - E{S'}} }
+   $$
+   
    ensuring fairness-improving modifications are favored while maintaining some randomness.
 
 5. **Convergence**:  
